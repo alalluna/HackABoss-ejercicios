@@ -1,4 +1,4 @@
-package EjercicioRepasoVector.Entities;
+package lunes16EjercicioRepasoVector.Entities;
 
 public class Verdura {
     private Integer id;

@@ -1,4 +1,4 @@
-package ejercicioPoo.Entities;
+package lunes16ejercicioPoo.Entities;
 
 public class GeldeBano extends Jabon {
     protected boolean esPhNeutro;

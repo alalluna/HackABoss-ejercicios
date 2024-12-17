@@ -1,6 +1,6 @@
-package EjercicioPooTwo;
+package martes17EjercicioPooTwo;
 
-import EjercicioPooTwo.Entities.Animal;
+import martes17EjercicioPooTwo.Entities.Animal;
 
 public class Main {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package ejercicioPoo.Entities;
+package lunes16ejercicioPoo.Entities;
 
 public class JabonRopa extends Jabon {
     protected boolean esParaLavadora;

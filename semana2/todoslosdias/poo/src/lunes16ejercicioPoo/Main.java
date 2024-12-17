@@ -1,7 +1,7 @@
-package ejercicioPoo;
+package lunes16ejercicioPoo;
 
-import ejercicioPoo.Entities.GeldeBano;
-import ejercicioPoo.Entities.JabonRopa;
+import lunes16ejercicioPoo.Entities.GeldeBano;
+import lunes16ejercicioPoo.Entities.JabonRopa;
 
 public class Main {
     public static void main(String[] args) {

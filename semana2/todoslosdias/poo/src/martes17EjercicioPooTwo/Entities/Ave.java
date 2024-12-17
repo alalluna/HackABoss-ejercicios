@@ -1,4 +1,4 @@
-package EjercicioPooTwo.Entities;
+package martes17EjercicioPooTwo.Entities;
 
 public class Ave extends Animal{
     public Ave() {

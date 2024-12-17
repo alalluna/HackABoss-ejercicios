@@ -1,6 +1,6 @@
-package martes_listas_colecciones;
+package martes17ListasColecciones;
 
-import martes_listas_colecciones.Entitites.Jugador;
+import martes17ListasColecciones.Entitites.Jugador;
 
 import java.util.ArrayList;
 import java.util.Scanner;

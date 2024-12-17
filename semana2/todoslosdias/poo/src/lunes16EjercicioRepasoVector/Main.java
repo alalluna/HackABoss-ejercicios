@@ -1,6 +1,6 @@
-package EjercicioRepasoVector;
+package lunes16EjercicioRepasoVector;
 
-import EjercicioRepasoVector.Entities.Verdura;
+import lunes16EjercicioRepasoVector.Entities.Verdura;
 
 public class Main {
     public static void main(String[] args) {

@@ -1,6 +1,4 @@
-package martes_listas_colecciones.Entitites;
-
-import java.util.ArrayList;
+package martes17ListasColecciones.Entitites;
 
 public class Jugador {
  private String nombre;
