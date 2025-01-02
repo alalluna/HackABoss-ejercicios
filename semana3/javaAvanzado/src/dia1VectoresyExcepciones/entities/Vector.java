@@ -65,7 +65,7 @@ public class Vector {
         if (index < 0 || index >= sizeDataVector) {
             throw new ArrayIndexOutOfBoundsException("Error: you tried to access an invalid position in the vector.");
         }
-        return vector[index];
+        return this.vector[index];
     }
 
     //tostring
