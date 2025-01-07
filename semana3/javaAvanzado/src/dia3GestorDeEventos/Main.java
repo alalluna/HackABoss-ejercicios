@@ -15,8 +15,6 @@ public class Main {
         events.add(new Event("Taller de Java", LocalDate.of(2025, 1, 5), "Taller"));
         events.add(new Event("Reunión de equipo", LocalDate.of(2025, 1, 7), "Reunión"));
 
-
-
         // Filtrar los eventos que están programados para una fecha específica
         LocalDate specificDate = LocalDate.of(2025, 1, 5);
         List<Event> eventsOnSpecificDate = events.stream()
