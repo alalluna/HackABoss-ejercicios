@@ -1,16 +1,16 @@
 package codeaConmigoAutosRecursion.entities;
 
 import java.util.List;
-import java.util.Optional;
+
 //entidad
-public class Auto {
+public class Car {
     private int id;
     private String brand;
     private String model;
     private int kilometers;
 
     //constructor
-    public Auto(int id, String brand, String model, int kilometers) {
+    public Car(int id, String brand, String model, int kilometers) {
         this.id = id;
         this.brand = brand;
         this.model = model;
@@ -52,33 +52,33 @@ public class Auto {
 
     //metodos
     // para calcular kilometros la lista el indice y la suma
-    public static int calculateTotalKilometers(List<Auto> autos, int index, int totalkms) {
+    public static int calculateTotalKilometers(List<Car> cars, int index, int totalkms) {
         //if else para la base y el return para recorrer los autos
         // Base
-        if (autos.size() == index) {
+        if (cars.size() == index) {
             return totalkms;
         }
         //recursion
-        return calculateTotalKilometers(autos, index + 1, totalkms + autos.get(index).getKilometers());
+        return calculateTotalKilometers(cars, index + 1, totalkms + cars.get(index).getKilometers());
     }
 
     //buscar por marca
-    public static Auto findAutoByBrand(List<Auto> autos, String brand, int index) {
+    public static Car findAutoByBrand(List<Car> cars, String brand, int index) {
         // Base
-        if (autos.size() == index) {
+        if (cars.size() == index) {
             return null; // No se encuentra
         }
         // Si la marca coincide
-        if (autos.get(index).getBrand().equalsIgnoreCase(brand)) {
-            return autos.get(index);
+        if (cars.get(index).getBrand().equalsIgnoreCase(brand)) {
+            return cars.get(index);
         }
         // Recursión
-        return findAutoByBrand(autos, brand, index + 1);
+        return findAutoByBrand(cars, brand, index + 1);
     }
 
     //to string
     @Override
     public String toString() {
-        return "Auto: ID " + id + ", brand " + brand  + ", model " + model + ", KM " + kilometers;
+        return "Car: ID " + id + ", brand " + brand  + ", model " + model + ", KM " + kilometers;
     }
 }
