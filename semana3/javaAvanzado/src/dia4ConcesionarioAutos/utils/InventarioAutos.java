@@ -4,19 +4,14 @@ import dia4ConcesionarioAutos.entities.Auto;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Predicate;
 //utils inventario debe de extender de auto para que solo puedan añadirse objetos de tipo auto
 //uso el generico T de type para crear una lista generica y despues crear inventario
 public class InventarioAutos<T extends Auto> {
     private final List<T> inventario;
 
-//    public InventarioAutos(List<T> inventario) {
-//        this.inventario = inventario;
-//    }
-
     // Constructor
     public InventarioAutos() {
-        this.inventario = new ArrayList<>();//inicilizo la lista ya
+        this.inventario = new ArrayList<>();//inicializo la lista ya
     }
 
     // Metodo genérico para agregar autos al inventario
@@ -24,15 +19,12 @@ public class InventarioAutos<T extends Auto> {
         //si es nulo lanzo excepcion
         if (auto == null) {
             throw new IllegalArgumentException("El auto no puede ser nulo.");
+        }else {
+            inventario.add(auto);
+            System.out.println(auto.getMarca() +" "+ auto.getModelo()+ " introducido correctamente: ");
         }
-        if (inventario.contains(auto)) {
-            //si ya existe lo notifico
-            System.out.println("El auto ya está en el inventario.");
-            return;
-        }
-        inventario.add(auto);
     }
-    // Metodo genérico para buscar autos por un criterio específico (marca o año)
+    // Metodo genérico para buscar autos por un criterio específico (marca o año, aunque yo he puesto todos)
     public List<T> filtrar(String marca, String modelo, int anyo, double precio) {
         return inventario.stream()
                 //para que filtre si no estan vacios ignorando mayusculas
@@ -41,13 +33,13 @@ public class InventarioAutos<T extends Auto> {
                 //para que filtre si no es 0
                 .filter(auto -> anyo == 0 || auto.getAnyo() == anyo)
                 .filter(auto -> precio == 0 || auto.getPrecio() == precio)
-                .toList();
+                .toList();//en mi intell me deja hacer tolist pero hace lo mismo que el collect(collectors..)
     }
 
     // Metodo genérico para calcular el valor total del inventario
     public double valorTotal() {
         return inventario.stream()
-                .mapToDouble(Auto::getPrecio)//para mapear los precios
+                .mapToDouble(Auto::getPrecio)//para mapear los precios (son datos double)
                 .sum(); //y despues sumarlos
     }
 

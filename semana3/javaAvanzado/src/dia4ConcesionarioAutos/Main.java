@@ -43,7 +43,8 @@ public class Main {
         boolean salir = false;
         //while para inicir la captura e interaccion de datos
         while (!salir) {
-            System.out.println("\n--- Menú de Inventario de Automoviles ---");
+            //estas son las opciones
+            System.out.println("\nMenú de Inventario de Automoviles");
             System.out.println("1. Introducir un automovil");
             System.out.println("2. Buscar automoviles por criterio");
             System.out.println("3. Calcular valor total del inventario");
@@ -53,7 +54,7 @@ public class Main {
 
             int opcion = scanner.nextInt();
             scanner.nextLine(); // para hacer el salto de línea
-            //le doy las opciones posibles dentro del programa
+            //le especifico las opciones posibles dentro del programa con switch case
             switch (opcion) {
                 case 1 -> {
                     System.out.print("Introduce la marca del automovil: ");
@@ -64,6 +65,7 @@ public class Main {
                     int anyo = scanner.nextInt();
                     System.out.print("Introduce el precio del automovil (ejemplo 30000,0): ");
                     double precio = scanner.nextDouble();
+
                     //llamo al metodo para introducir un automovil
                     Auto auto = new Auto(marca, modelo, anyo, precio);
                     inventario.introducirAuto(auto);
@@ -78,14 +80,15 @@ public class Main {
                     int anyo = scanner.nextInt();
                     System.out.print("Introduce el precio (escribe 0,0 para no filtrar): ");
                     double precio = scanner.nextDouble();
+
                     //llamo al metodo filtrar
                     List<Auto> resultados = inventario.filtrar(marca, modelo, anyo, precio);
-                    System.out.println("\n--- Resultados de la búsqueda ---");
+                    System.out.println("\nResultados de la búsqueda");
                     //le ofrezco las dos posibilidades, si hay o no datos
                     if (resultados.isEmpty()) {
                         System.out.println("No se encontraron automoviles con estos criterios.");
                     } else {
-                        //para imprimir los resultados
+                        //para imprimir los resultados del filtro
                         resultados.forEach(System.out::println);
                     }
                 }
@@ -96,7 +99,7 @@ public class Main {
                 }
                 case 4 -> {
                     //llamo al metodo mostrar inventario
-                    System.out.println("\n--- Inventario Actual ---");
+                    System.out.println("\nInventario Actual");
                     inventario.mostrarInventario();
                 }
                 case 5 -> {
@@ -105,10 +108,9 @@ public class Main {
                     System.out.println("Saliendo del sistema.");
                 }
                 //mensaje de error para la introduccion de otros valores
-                default -> System.out.println("Opción no válida. Intenta de nuevo.");
+                default -> System.err.println("Opción no válida. Intenta de nuevo.");
             }
         }
-
         scanner.close();
     }
 }
